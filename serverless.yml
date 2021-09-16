@@ -1,0 +1,21 @@
+service: telegram-bot-webhooks
+frameworkVersion: '2'
+
+useDotenv: true
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+
+functions:
+  webhook:
+    handler: handler.webhook
+    environment:
+      BOT_TOKEN: ${env:BOT_TOKEN}
+    events:
+      - httpApi: '*'

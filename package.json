@@ -1,0 +1,20 @@
+{
+  "name": "telegram-bot-webhooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "start": "sls offline start",
+    "deploy:all": "sls deploy",
+    "remove:all": "sls remove",
+    "set:telegram:webhook": "curl -F \"url=https://<AWS_ENDPOINT>\" https://api.telegram.org/bot<TELEGRAM_BOT_TOKEN>/setWebhook"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^8.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.4"
+  }
+}
